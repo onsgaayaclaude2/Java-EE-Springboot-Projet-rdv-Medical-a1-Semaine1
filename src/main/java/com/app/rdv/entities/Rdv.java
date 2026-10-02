@@ -1,4 +1,5 @@
 package com.app.rdv.entities;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,12 +17,15 @@ public class Rdv {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @JsonFormat (pattern = "yyyy-MM-dd HH:mm", shape = JsonFormat.Shape.STRING)
-    private LocalDateTime dateRdv;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", shape = JsonFormat.Shape.STRING)
+    private LocalDateTime dateRdv;      // ✅ LocalDateTime
+
     private String etat;
 
     @ManyToOne
     private Patient patient;
+
     @ManyToOne
     private Medecin medecin;
 }

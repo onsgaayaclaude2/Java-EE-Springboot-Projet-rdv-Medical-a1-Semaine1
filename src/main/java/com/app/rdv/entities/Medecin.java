@@ -15,9 +15,8 @@ public class Medecin {
     private int id;
     private String nom;
     private String prenom;
-    private int adresse;
-    private int specialite;
-
+    private String specialite;   // ✅ String
+    private String adresse;      // ✅ String
 
 
 }
